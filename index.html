@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="./style-additions.css">
+
+</head>
+
+<body>
+	<div class="page-header" style="background-color:#eeeeee; margin-top: 0px;">
+		<div class="container">
+			<h1>
+				Langserver.org<br/>
+				<small>A community-driven source of knowledge for <a href = "https://www.github.com/Microsoft/language-server-protocol">Language Server Protocol</a> implementations</small>
+			</h1>
+			<br/>
+			<p class="lead">
+				Langserver.org is a <a href="https://github.com/langserver/langserver.github.io">community-driven site</a>, maintained
+				by <a href="https://www.sourcegraph.com">Sourcegraph</a>, to track development progress of LSP-compatible language servers
+				and clients.
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3>What is LSP?</h3>
+		<p>
+			From the <a href="https://github.com/Microsoft/language-server-protocol">official Language Server Protocol specification</a>:
+		</p>
+		<blockquote>
+			The Language Server protocol is used between a tool (the client) and a language smartness provider (the server) to integrate
+			features like auto complete, goto definition, find all references and alike into the tool
+		</blockquote>
+		<p>
+			The LSP was created by Microsoft to define a common language for programming language analyzers to speak. Today, several
+			companies have come together to support its growth, including Codenvy, Red Hat, and Sourcegraph, and the protocol is becoming
+			supported by a rapidly growing list of editor and language communities. See below for details on and links to current
+			client and server implementations.
+		</p>
+
+		<br/>
+		<h3>Why LSP?</h3>
+		</p>
+		LSP creates the opportunity to reduce the <em>m-times-n</em> complexity problem of providing a high level of support for
+		any programming language in any editor, IDE, or client endpoint to a simpler <em>m-plus-n</em> problem.
+		</p>
+		<p>
+			For example, instead of the traditional practice of building a Python plugin for VSCode, a Python plugin for Sublime Text,
+			a Python plugin for Vim, a Python plugin for Sourcegraph, and so on, for every language, LSP allows language communities
+			to concentrate their efforts on a single, high performing language server that can provide code completion, hover tooltips,
+			jump-to-definition, find-references, and more, while editor and client communities can concentrate on building a single,
+			high performing, intuitive and idiomatic extension that can communicate with <em>any</em> language server to instantly
+			provide deep language support.
+		</p>
+
+		<br/>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">
+							<u>The problem</u>: "The Matrix"</h3>
+					</div>
+				</div>
+
+				<table class="table table-bordered table-condensed">
+					<tr>
+						<th width="20%"></th>
+						<th width="20%">Go</th>
+						<th width="20%">Java</th>
+						<th width="20%">TypeScript</th>
+						<th width="20%">...</th>
+					</tr>
+					<tr>
+						<td>Emacs</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Vim</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>VSCode</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>...</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-1 text-center" style="font-size:24px;"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">
+							<u>The solution</u>: lang servers and clients</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<table class="table">
+							<tr>
+								<td>Go</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>Java</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>TypeScript</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-6">
+						<table class="table">
+							<tr>
+								<td>Emacs</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>Vim</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>VSCode</td>
+								<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<a name="implementations"></a>
+		<h3>Current implementations</h3>
+		<p class="lead">
+			LSP is growing - fast. Check here for the latest on adoption.
+		</p>
+		<p>
+			Microsoft currently maintains a <a href="https://github.com/Microsoft/language-server-protocol/wiki/Protocol-Implementations">parallel list of language server implementations</a>			in the core LSP repository. This site is designed to operate alongside that list, to provide one more level of information
+			about the capabilities of language servers and LSP clients, to help users figure out what they can look forward to when
+			they download and install a new language server or client, and to help interested developers quickly determine how they
+			can pitch in! We have <a href="#implementations-server">mapped out</a> what we consider to be the most important features
+			and functionality of both LSP language servers and LSP clients, to provide a quick-reference check for each language and
+			client community to use.
+		</p>
+		<br/>
+		<h4>Qualifications:</h4>
+		<p>
+			To be included on this list, language servers and clients must:
+			<ol>
+				<li>be fully open source</li>
+				<li>be editor- or language-agnostic (for language servers and clients, respectively)</li>
+				<li>implement at least one of the key methods listed below</li>
+			</ol>
+		</p>
+		<p>
+			Think we're missing something? <a href="https://github.com/langserver/langserver.github.io">Let us know</a>!
+		</p>
+		<br/>
+		<h4>Key</h4>
+		<div class="row">
+			<div class="col-md-2">
+				<table class="table">
+					<tr>
+						<td class="success"></td>
+						<td>Implemented</td>
+					</tr>
+					<tr>
+						<td class="warning"></td>
+						<td>WIP</td>
+					</tr>
+					<tr>
+						<td class="danger"></td>
+						<td>Other/unknown</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<br/>
+		<a name="implementations-server"></a>
+		<h4>Language servers</h4>
+
+		<table class="table table-striped">
+			<thead>
+				<th>Language</th>
+				<th>Maintainer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+				<th class="repo">Repository</th>
+				<th>Code completion</th>
+				<th>Hover</th>
+				<th>Jump to def</th>
+				<th>Find references</th>
+				<th>Workspace symbols</th>
+				<th>VFS extension<sup>1</sup></th>
+				<th>Isolated<sup>2</sup></th>
+				<th>Parallel<sup>3</sup></th>
+			</thead>
+			<tr>
+				<th>C#</th>
+				<td><a href="http://www.omnisharp.net/">OmniSharp</a></td>
+				<td class="repo"><a href="https://github.com/OmniSharp/omnisharp-node-client/blob/master/languageserver">github.com/OmniSharp/omnisharp-node-client/blob/master/languageserver</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Go</th>
+				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/go-langserver">github.com/sourcegraph/go-langserver</a></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>Groovy</th>
+				<td><a href="http://www.palantir.com/">Palantir</a></td>
+				<td class="repo"><a href="https://github.com/palantir/groovy-language-server">github.com/palantir/groovy-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Haxe</th>
+				<td><a href="https://github.com/nadako">Dan Korostelev</a></td>
+				<td class="repo"><a href="https://github.com/vshaxe/haxe-languageserver">github.com/vshaxe/haxe-languageserver</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Java</th>
+				<td><a href="https://github.com/gorkem">Gorkem Ercan</a><br/>Red Hat</td>
+				<td class="repo"><a href="https://github.com/gorkem/java-language-server">github.com/gorkem/java-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Java</th>
+				<td><a href="https://github.com/georgewfraser">georgewfraser</a></td>
+				<td class="repo"><a href="https://github.com/georgewfraser/vscode-javac">github.com/georgewfraser/vscode-javac</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>JavaScript</th>
+				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/javascript-typescript-langserver">github.com/sourcegraph/javascript-typescript-langserver</a></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>PHP</th>
+				<td><a href="https://github.com/felixfbecker">Felix Becker</a></td>
+				<td class="repo"><a href="https://github.com/felixfbecker/php-language-server">github.com/felixfbecker/php-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+			</tr>
+			<tr>
+				<th>PHP</th>
+				<td><a href="https://github.com/HvyIndustries">HvyIndustries</a></td>
+				<td class="repo"><a href="https://github.com/HvyIndustries/crane/blob/master/server">github.com/HvyIndustries/crane/blob/master/server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Reason</th>
+				<td><a href="https://github.com/freebroccolo">Darin Morrison</a></td>
+				<td class="repo"><a href="https://github.com/freebroccolo/vscode-reasonml">github.com/freebroccolo/vscode-reasonml</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>Rust</th>
+				<td><a href="https://github.com/jonathandturner">Jonathan Turner</a><br/>Mozilla</td>
+				<td class="repo"><a href="https://github.com/jonathandturner/rls">github.com/jonathandturner/rls</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class=""></td>
+				<td class=""></td>
+			</tr>
+			<tr>
+				<th>TypeScript</th>
+				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/javascript-typescript-langserver">github.com/sourcegraph/javascript-typescript-langserver</a></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th colspan="11"><br/>Works in progress</th>
+			</tr>
+		</table>
+
+		<br/>
+		<p>
+			<sup>1</sup> The <a href="https://github.com/sourcegraph/language-server-protocol/pull/3">Virtual File System (VFS) extension</a>			allows a language server to operate without sharing a physical file system with the client. This provides deployment benefits
+			and security enhancements in multi-tenant environments.<br/>
+			<sup>2</sup> A language server can be run without running local executables or interacting with the local file system.<br/>
+			<sup>3</sup> A single language server can service multiple simultaneous workspace sessions independently.
+		</p>
+
+		<br/>
+		<a name="implementations-client"></a>
+		<h4>LSP clients</h4>
+
+		<table class="table table-striped">
+			<thead>
+				<th>Editor/client</th>
+				<th>Maintainer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+				<th>Repository</th>
+				<th>Code completion</th>
+				<th>Hover</th>
+				<th>Jump to def</th>
+				<th>Find references</th>
+				<th>Symbol search</th>
+				<th>Diagnostics</th>
+			</thead>
+			<tr>
+				<th>Eclipse</th>
+				<td><a href="https://github.com/eclipselabs/eclipselabs">Eclipse Labs</a></td>
+				<td class="repo"><a href="https://github.com/eclipselabs/eclipse-language-service">github.com/eclipselabs/eclipse-language-service</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>Eclipse Che</th>
+				<td><a href="http://www.eclipse.org/">Eclipse</a>, <a href="https://codenvy.com/">Codenvy</a></td>
+				<td class="repo"><a href="https://github.com/eclipse/che/">github.com/eclipse/che/</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>VSCode</th>
+				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
+				<td class="repo"><a href="https://github.com/Microsoft/VSCode">github.com/Microsoft/VSCode</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th colspan="9"><br/>Works in progress</td>
+			</tr>
+			<tr>
+				<th>Sublime</th>
+				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/sublime-lsp">github.com/sourcegraph/sublime-lsp</a></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+			</tr>
+			<tr>
+				<th>Emacs</th>
+				<td><a href="https://github.com/cmr">Corey Richardson</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/emacs-lsp">github.com/sourcegraph/emacs-lsp</a></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+			</tr>
+			<tr>
+				<th>Vim</th>
+				<td><a href="https://github.com/tjdevries">TJ DeVries</a></td>
+				<td class="repo"><a href="https://github.com/tjdevries/nvim-langserver-shim">github.com/tjdevries/nvim-langserver-shim</a></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+			</tr>
+		</table>
+
+		<br/>
+		<a name="contact"></a>
+		<h3>Contact us</h3>
+		<p>
+			Langserver.org is maintained by <a href="https://sourcegraph.com">Sourcegraph</a>.
+		</p>
+		<p>
+			To suggest additions or to update the status of a project, please file issues or submit PRs on this project at <a href="https://github.com/langserver/langserver.github.io">github.com/langserver/langserver.github.io</a>
+		</p>
+
+		<br/><br/>
+		
+		
+		<p>
+			Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+		</p>
+	</div>
+</body>
+
+</html>
