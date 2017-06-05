@@ -52,13 +52,13 @@
 
 	<div class="container">
 		<h3>What is LSP?</h3>
-		<p>
-			From the <a href="https://github.com/Microsoft/language-server-protocol">official Language Server Protocol specification</a>:
-		</p>
 		<blockquote>
 			The Language Server protocol is used between a tool (the client) and a language smartness provider (the server) to integrate
 			features like auto complete, go to definition, find all references and alike into the tool
 		</blockquote>
+		<p>
+			– <a href="https://github.com/Microsoft/language-server-protocol">official Language Server Protocol specification</a>
+		</p>
 		<p>
 			The LSP was created by Microsoft to define a common language for programming language analyzers to speak. Today, several
 			companies have come together to support its growth, including Codenvy, Red Hat, and Sourcegraph, and the protocol is becoming
@@ -186,28 +186,22 @@
 		<a name="implementations"></a>
 		<h3>Current implementations</h3>
 		<p class="lead">
-			LSP is growing - fast. Check here for the latest on adoption.
+			LSP is growing - fast. See <a href="#implementations-server">tables</a> below for the latest on adoption.
 		</p>
 		<p>
-			Microsoft currently maintains a <a href="https://github.com/Microsoft/language-server-protocol/wiki/Protocol-Implementations">parallel list of language server implementations</a>			in the core LSP repository. This site is designed to operate alongside that list, to provide one more level of information
-			about the capabilities of language servers and LSP clients, to help users figure out what they can look forward to when
-			they download and install a new language server or client, and to help interested developers quickly determine how they
-			can pitch in! We have <a href="#implementations-server">mapped out</a> what we consider to be the most important features
-			and functionality of both LSP language servers and LSP clients, to provide a quick-reference check for each language and
-			client community to use.
+			Microsoft currently maintains a <a href="https://github.com/Microsoft/language-server-protocol/wiki/Protocol-Implementations">parallel list of language server implementations</a> in the core LSP repository. This site is designed to operate alongside Microsoft's list by providing more information
+			about the capabilities of language servers and LSP clients, informing users which features to expect when
+			they download and install a new language server and/or client, and communicating where to open-source contributors where help is needed.
 		</p>
 		<br/>
 		<h4>Qualifications:</h4>
 		<p>
 			To be included on this list, language servers and clients must:
 			<ol>
-				<li>be fully open source</li>
-				<li>be editor- or language-agnostic (for language servers and clients, respectively)</li>
-				<li>implement at least one of the key methods listed below</li>
+				<li>Be fully open source</li>
+				<li>Be editor-agnostic for language servers or language-agnostic for clients</li>
+				<li>Implement at least one of the key methods listed below</li>
 			</ol>
-		</p>
-		<p>
-			Think we're missing something? <a href="https://github.com/langserver/langserver.github.io">Let us know</a>!
 		</p>
 		<br/>
 		<h4>Key</h4>
@@ -224,7 +218,7 @@
 					</tr>
 					<tr>
 						<td class="danger"></td>
-						<td>Other/unknown</td>
+						<td>Not implemented</td>
 					</tr>
 				</table>
 			</div>
@@ -242,12 +236,10 @@
 				<th>Code completion</th>
 				<th>Hover</th>
 				<th>Jump to def</th>
-				<th>Find references</th>
 				<th>Workspace symbols</th>
+				<th>Find references</th>
+				<th>Stream reference results</th>
 				<th>Diagnostics</th>
-				<th>VFS extension<sup>1</sup></th>
-				<th>Isolated<sup>2</sup></th>
-				<th>Parallel<sup>3</sup></th>
 			</thead>
 			<tr>
 				<th>C#</th>
@@ -258,10 +250,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>C#</th>
@@ -272,11 +262,9 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-			</tr>			
+				<td class="danger"></td>
+				<td class="danger"></td>
+			</tr>
 			<tr>
 				<th>CSS</th>
 				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
@@ -284,12 +272,10 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Go</th>
@@ -300,10 +286,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>GraphQL</th>
@@ -314,10 +298,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Groovy</th>
@@ -328,10 +310,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Haxe</th>
@@ -342,10 +322,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Java</th>
@@ -356,10 +334,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Java</th>
@@ -370,10 +346,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>JavaScript</th>
@@ -384,10 +358,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>JSON</th>
@@ -398,10 +370,8 @@
 				<td class="danger"></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Julia</th>
@@ -412,10 +382,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>O'Caml + ReasonML</th>
@@ -426,10 +394,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>PHP</th>
@@ -440,10 +406,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>PHP</th>
@@ -452,12 +416,10 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="warning"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
         <th>Python</th>
@@ -468,10 +430,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Rust</th>
@@ -482,10 +442,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class="warning"></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Scala</th>
@@ -496,10 +454,8 @@
 				<td class="warning"></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Swift</th>
@@ -510,10 +466,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>TypeScript</th>
@@ -524,27 +478,23 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
-				<th>SonarLint for JS/PHP/Python</th>
+				<th>JS + PHP + Python</th>
 				<td><a href="https://sonarsource.com/">SonarSource</a></td>
 				<td class="repo"><a href="https://github.com/SonarSource/sonarlint-core">github.com/SonarSource/sonarlint-core</a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
 			</tr>
 			<tr>
-				<th colspan="11"><br/>Works in progress</th>
+				<th colspan="11"><br/>Work in Progress</th>
 			</tr>
 			<tr>
 				<th>C / C++</th>
@@ -555,10 +505,8 @@
 				<td class="warning"></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
-				<td class=""></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 			<tr>
 				<th>Crystal</th>
@@ -566,20 +514,15 @@
 				<td class="repo"><a href="https://github.com/atom-crystal/scry">github.com/atom-crystal/scry</a></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
-				<td class=""></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
 			</tr>
 		</table>
 
 		<br/>
-		<p>
-			<sup>1</sup> The <a href="https://github.com/sourcegraph/language-server-protocol/pull/3">Virtual File System (VFS) extension</a>			allows a language server to operate without sharing a physical file system with the client. This provides deployment benefits
-			and security enhancements in multi-tenant environments.<br/>
-			<sup>2</sup> A language server can be run without running local executables or interacting with the local file system.<br/>
-			<sup>3</sup> A single language server can service multiple simultaneous workspace sessions independently.
-		</p>
 
 		<br/>
 		<a name="implementations-client"></a>
@@ -642,7 +585,18 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
-				<th colspan="9"><br/>Works in progress</td>
+				<th colspan="9"><br/>Work in progress</td>
+			</tr>
+			<tr>
+				<th>Atom</th>
+				<td><a href="https://github.com/damieng">Damien Guard</a></td>
+				<td class="repo"><a href="https://github.com/atom/atom-languageclient">github.com/atom/atom-languageclient</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
 				<th>Emacs</th>
@@ -676,17 +630,6 @@
 				<td class="warning"></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
-			</tr>
-			<tr>
-				<th>Atom</th>
-				<td><a href="https://github.com/damieng">Damien Guard</a></td>
-				<td class="repo"><a href="https://github.com/atom/atom-languageclient">github.com/atom/atom-languageclient</a></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 		</table>
 
