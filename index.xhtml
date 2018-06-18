@@ -41,7 +41,7 @@
 		<div class="container">
 			<h1>
 				Langserver.org<br/>
-				<small>A community-driven source of knowledge for <a href = "https://www.github.com/Microsoft/language-server-protocol">Language Server Protocol</a> implementations</small>
+				<small>A community-driven source of knowledge for <a href = "https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> implementations</small>
 			</h1>
 			<br/>
 			<p class="lead">
@@ -54,13 +54,13 @@
 
 	<div class="container">
 		<h3>What is LSP?</h3>
-		<p>
-			From the <a href="https://github.com/Microsoft/language-server-protocol">official Language Server Protocol specification</a>:
-		</p>
 		<blockquote>
 			The Language Server protocol is used between a tool (the client) and a language smartness provider (the server) to integrate
 			features like auto complete, go to definition, find all references and alike into the tool
 		</blockquote>
+		<p>
+			– <a href="https://microsoft.github.io/language-server-protocol/specification">official Language Server Protocol specification</a>
+		</p>
 		<p>
 			The LSP was created by Microsoft to define a common language for programming language analyzers to speak. Today, several
 			companies have come together to support its growth, including Codenvy, Red Hat, and Sourcegraph, and the protocol is becoming
@@ -189,26 +189,22 @@
 		<a name="implementations"></a>
 		<h3>Current implementations</h3>
 		<p class="lead">
-			LSP is growing - fast. Check here for the latest on adoption.
+			LSP is growing - fast. See <a href="#implementations-server">tables</a> below for the latest on adoption.
 		</p>
 		<p>
-			Microsoft currently maintains a <a href="https://github.com/Microsoft/language-server-protocol/wiki/Protocol-Implementations">parallel list of language server implementations</a>			in the core LSP repository. This site is designed to operate alongside that list, to provide one more level of information
-			about the capabilities of language servers and LSP clients, to help users figure out what they can look forward to when
-			they download and install a new language server or client, and to help interested developers quickly determine how they
-			can pitch in! We have <a href="#implementations-server">mapped out</a> what we consider to be the most important features
-			and functionality of both LSP language servers and LSP clients, to provide a quick-reference check for each language and
-			client community to use.
+			Microsoft currently maintains a <a href="https://microsoft.github.io/language-server-protocol/implementors/servers/">parallel list of language server implementations</a> in the core LSP repository. This site is designed to operate alongside Microsoft's list by providing more information
+			about the capabilities of language servers and LSP clients, informing users which features to expect when
+			they download and install a new language server and/or client, and communicating where to open-source contributors where help is needed.
 		</p>
 		<br/>
 		<h4>Qualifications:</h4>
-		<p>To be included on this list, language servers and clients must:</p>
-		<ul>
-			<li>be fully open source</li>
-			<li>be editor- or language-agnostic (for language servers and clients, respectively)</li>
-			<li>implement at least one of the key methods listed below</li>
-		</ul>
 		<p>
-			Think we're missing something? <a href="https://github.com/langserver/langserver.github.io">Let us know</a>!
+			To be included on this list, language servers and clients must:
+			<ol>
+				<li>Be fully open source</li>
+				<li>Be editor-agnostic for language servers or language-agnostic for clients</li>
+				<li>Implement at least one of the key methods listed below</li>
+			</ol>
 		</p>
 		<br/>
 		<h4>Key</h4>
@@ -225,7 +221,7 @@
 					</tr>
 					<tr>
 						<td class="danger"></td>
-						<td>Other/unknown</td>
+						<td>Not implemented</td>
 					</tr>
 				</table>
 			</div>
@@ -243,12 +239,35 @@
 				<th>Code completion</th>
 				<th>Hover</th>
 				<th>Jump to def</th>
-				<th>Find references</th>
 				<th>Workspace symbols</th>
-				<th>VFS extension<sup>1</sup></th>
-				<th>Isolated<sup>2</sup></th>
-				<th>Parallel<sup>3</sup></th>
+				<th>Find references</th>
+				<th>Diagnostics</th>
+				<th>Additional capabilities</th>
 			</thead>
+			<tr>
+				<th>Ballerina</th>
+				<td><a href="https://ballerina.io/">ballerina.io</a></td>
+				<td class="repo"><a href="https://github.com/ballerina-platform/ballerina-lang/tree/master/language-server">github.com/ballerina-platform/ballerina-lang/tree/master/language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Bash</th>
+				<td><a href="http://mads-hartmann.com/">Mads Hartmann</a></td>
+				<td class="repo"><a href="https://github.com/mads-hartmann/bash-language-server">github.com/mads-hartmann/bash-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
 			<tr>
 				<th>C#</th>
 				<td><a href="http://www.omnisharp.net/">OmniSharp</a></td>
@@ -258,22 +277,165 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
 			</tr>
 			<tr>
-				<th>CSS</th>
-				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
-				<td class="repo"><a href="https://github.com/Microsoft/vscode/tree/master/extensions/css">github.com/Microsoft/vscode/tree/master/extensions/css</a></td>
+				<th>C#</th>
+				<td><a href="https://github.com/CXuesong/LanguageServer.NET/">CXuesong</a></td>
+				<td class="repo"><a href="https://github.com/CXuesong/LanguageServer.NET">github.com/CXuesong/LanguageServer.NET</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+
+				<td></td>
+			</tr>
+			<tr>
+				<th>C / C++</th>
+				<td><a href="https://github.com/jacobdufault">Jacob Dufault</a></td>
+				<td class="repo"><a href="https://github.com/cquery-project/cquery">github.com/cquery-project/cquery</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>C / C++</th>
+				<td><a href="https://github.com/MaskRay">MaskRay</a></td>
+				<td class="repo"><a href="https://github.com/MaskRay/ccls">github.com/MaskRay/ccls</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Clojure</th>
+				<td><a href="https://github.com/snoe">snoe</a></td>
+				<td class="repo"><a href="https://github.com/snoe/clojure-lsp">github.com/snoe/clojure-lsp</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>CSS/LESS/SASS</th>
+				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
+				<td class="repo"><a href="https://github.com/Microsoft/vscode/tree/master/extensions/css">github.com/Microsoft/vscode/tree/master/extensions/css</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+      <tr>
+				<th>CSS/LESS/SASS</th>
+				<td><a href="https://github.com/DeltaEvo">DeltaEvo</a></td>
+				<td class="repo"><a href="https://github.com/vscode-langservers/vscode-css-languageserver-bin">github.com/vscode-langservers/vscode-css-languageserver-bin</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>D</th>
+				<td><a href="https://github.com/Pure-D/serve-d">WebFreak001</a></td>
+				<td class="repo"><a href="https://github.com/Pure-D/serve-d">github.com/Pure-D/serve-d</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Dart</th>
+				<td><a href="https://github.com/natebosch">Nate Bosch</a></td>
+				<td class="repo"><a href="https://github.com/natebosch/dart_language_server">github.com/natebosch/dart_language_server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Dockerfile</th>
+				<td><a href="https://github.com/rcjsuen">Remy Suen</a></td>
+				<td class="repo"><a href="https://github.com/rcjsuen/dockerfile-language-server-nodejs">github.com/rcjsuen/dockerfile-language-server-nodejs</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Erlang</th>
+				<td><a href="https://github.com/erlang">Erlang/OTP</a>and <a href="https://github.com/vladdu">Vlad Dumitrescu</a></td>
+				<td class="repo"><a href="https://github.com/JakeBecker/elixir-ls">github.com/erlang/sourcer</a></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Elixir</th>
+				<td><a href="https://github.com/JakeBecker">Jake Becker</a></td>
+				<td class="repo"><a href="https://github.com/JakeBecker/elixir-ls">github.com/JakeBecker/elixir-ls</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Gauge</th>
+				<td><a href="https://gauge.org/">Gauge</a></td>
+				<td class="repo"><a href="https://github.com/getgauge/gauge">github.com/getgauge/gauge</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>GLSL</th>
+				<td><a href="https://github.com/svenstaro">Sven-Hendrik Haase</a></td>
+				<td class="repo"><a href="https://github.com/svenstaro/glsl-language-server">github.com/svenstaro/glsl-language-server</a></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Go</th>
@@ -284,9 +446,14 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
+						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
+						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
 				<th>GraphQL</th>
@@ -297,9 +464,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Groovy</th>
@@ -310,9 +476,20 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Haskell</th>
+				<td><a href="https://github.com/alanz">Alan Zimmerman</a></td>
+				<td class="repo"><a href="https://github.com/haskell/haskell-ide-engine">github.com/haskell/haskell-ide-engine</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Haxe</th>
@@ -323,22 +500,44 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>HTML</th>
+				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
+				<td class="repo"><a href="https://github.com/Microsoft/vscode/tree/master/extensions/html">github.com/Microsoft/vscode/tree/master/extensions/html</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Imandra Protocol Language</th>
+				<td><a href="https://www.imandra.ai/">Aesthetic Integration</a></td>
+				<td class="repo"><a href="https://github.com/AestheticIntegration/ipl-vscode">https://github.com/AestheticIntegration/ipl-vscode</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
 				<th>Java</th>
-				<td><a href="https://github.com/gorkem">Gorkem Ercan</a><br/>Red Hat</td>
-				<td class="repo"><a href="https://github.com/gorkem/java-language-server">github.com/gorkem/java-language-server</a></td>
+				<td><a href="https://projects.eclipse.org/projects/eclipse.jdt.ls">Eclipse Foundation</a>, <a href="https://www.redhat.com">Red Hat</a></td>
+				<td class="repo"><a href="https://github.com/eclipse/eclipse.jdt.ls">github.com/eclipse/eclipse.jdt.ls</a></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Java</th>
@@ -349,22 +548,39 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>JavaScript</th>
 				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
 				<td class="repo"><a href="https://github.com/sourcegraph/javascript-typescript-langserver">github.com/sourcegraph/javascript-typescript-langserver</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
+						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
+						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th>JavaScript (Flow)</th>
+				<td><a href="https://github.com/flowtype">Flowtype</a></td>
+				<td class="repo"><a href="https://github.com/flowtype/flow-language-server">github.com/flowtype/flow-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td>
+				</td>
 			</tr>
 			<tr>
 				<th>JSON</th>
@@ -375,9 +591,19 @@
 				<td class="danger"></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
+			<tr>
+				<th>JS + PHP + Python</th>
+				<td><a href="https://sonarsource.com/">SonarSource</a></td>
+				<td class="repo"><a href="https://github.com/SonarSource/sonarlint-core">github.com/SonarSource/sonarlint-core</a></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Julia</th>
@@ -388,12 +614,35 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
-				<th>O'Caml + ReasonML</th>
+				<th>Kotlin</th>
+				<td><a href="https://github.com/georgewfraser">georgewfraser</a></td>
+				<td class="repo"><a href="https://github.com/georgewfraser/kotlin-language-server">github.com/georgewfraser/kotlin-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Lua</th>
+				<td><a href="https://github.com/Alloyed">Alloyed</a></td>
+				<td class="repo"><a href="https://github.com/Alloyed/lua-lsp">github.com/Alloyed/lua-lsp</a></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>OCaml + ReasonML</th>
 				<td><a href="https://github.com/freebroccolo">Darin Morrison</a></td>
 				<td class="repo"><a href="https://github.com/freebroccolo/ocaml-language-server">github.com/freebroccolo/ocaml-language-server</a></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
@@ -401,9 +650,8 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>PHP</th>
@@ -414,22 +662,58 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
-				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
+						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
+						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th>PureScript</th>
+				<td><a href="https://github.com/nwolverson">Nicholas Wolverson</a></td>
+				<td class="repo"><a href="https://github.com/nwolverson/purescript-language-server">github.com/nwolverson/purescript-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+				</td>
 			</tr>
 			<tr>
 				<th>PHP</th>
-				<td><a href="https://github.com/HvyIndustries">HvyIndustries</a></td>
+				<td><a href="https://github.com/HvyIndustries">Hvy Industries</a></td>
 				<td class="repo"><a href="https://github.com/HvyIndustries/crane/blob/master/server">github.com/HvyIndustries/crane/blob/master/server</a></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
 				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+        <th>Python</th>
+        <td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
+				<td class="repo"><a href="https://github.com/sourcegraph/python-langserver">https://github.com/sourcegraph/python-langserver</a></td>
 				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="danger"></td>
-				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
+						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
+						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
+						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
 				<th>Python</th>
@@ -440,22 +724,48 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class=""></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>R</th>
+				<td><a href="https://github.com/REditorSupport/languageserver">REditorSupport</a></td>
+				<td class="repo"><a href="https://github.com/REditorSupport/languageserver">github.com/REditorSupport/languageserver</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Ruby</th>
+				<td><a href="https://solargraph.org/">Fred Snyder</a></td>
+				<td class="repo"><a href="https://github.com/castwide/solargraph">github.com/castwide/solargraph</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Rust</th>
-				<td><a href="https://github.com/jonathandturner">Jonathan Turner</a><br/>Mozilla</td>
-				<td class="repo"><a href="https://github.com/jonathandturner/rls">github.com/jonathandturner/rls</a></td>
+				<td><a href="https://github.com/nrc">Nick Cameron</a> and the Rust community</td>
+				<td class="repo"><a href="https://github.com/rust-lang-nursery/rls">github.com/rust-lang-nursery/rls</a></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="warning"></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
 				<th>Scala</th>
@@ -466,9 +776,20 @@
 				<td class="warning"></td>
 				<td class="danger"></td>
 				<td class="danger"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Scala</th>
+				<td><a href="https://github.com/scalameta">Scalameta</a></td>
+				<td class="repo"><a href="https://github.com/scalameta/metals">github.com/scalameta/metals</a></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>Swift</th>
@@ -479,25 +800,78 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="danger"></td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>TypeScript</th>
 				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
 				<td class="repo"><a href="https://github.com/sourcegraph/javascript-typescript-langserver">github.com/sourcegraph/javascript-typescript-langserver</a></td>
-				<td class="danger"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
+						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
+						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
+						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<th colspan="11"><br/>Works in progress</th>
+				<th>XML</th>
+				<td><a href="https://ibm.com/">IBM</a></td>
+				<td class="repo"><a href="https://github.com/microclimate-devops/xml-language-server">github.com/microclimate-devops/xml-language-server</a></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>YAML</th>
+				<td><a href="https://www.redhat.com">Red Hat</a></td>
+				<td class="repo"><a href="https://github.com/redhat-developer/yaml-language-server">github.com/redhat-developer/yaml-language-server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>YANG</th>
+				<td><a href="https://typefox.io/">TypeFox</a></td>
+				<td class="repo"><a href="https://github.com/yang-tools/yang-lsp">github.com/yang-tools/yang-lsp</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Xtext (Any Language)</th>
+				<td><a href="https://typefox.io/">TypeFox</a></td>
+				<td class="repo"><a href="https://github.com/eclipse/xtext-core">github.com/eclipse/xtext-core</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th colspan="13"><br/>Work in Progress</th>
 			</tr>
 			<tr>
 				<th>C / C++</th>
@@ -508,19 +882,93 @@
 				<td class="warning"></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Crystal</th>
+				<td><a href="https://kofno.github.io/">Ryan L. Bell</a> and <a href="https://github.com/crystal-lang-tools/scry/graphs/contributors">contributors</a></td>
+				<td class="repo"><a href="https://github.com/crystal-lang-tools/scry">github.com/crystal-lang-tools/scry</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>reStructuredText</th>
+				<td><a href="https://github.com/lextm">Lex Li</a></td>
+				<td class="repo"><a href="https://github.com/lextm/restructuredtext-antlr">https://github.com/lextm/restructuredtext-antlr</a></td>
+				<td class="warning"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Ruby</th>
+				<td><a href="https://mtsmfm.github.io/">Fumiaki MATSUSHIMA</a></td>
+				<td class="repo"><a href="https://github.com/mtsmfm/language_server-ruby">github.com/mtsmfm/language_server-ruby</a></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>TypeCobol</th>
+				<td><a href="https://github.com/TypeCobolTeam">TypeCobol Team</a></td>
+				<td class="repo"><a href="https://github.com/TypeCobolTeam/TypeCobol/tree/master/TypeCobol.LanguageServer">TypeCobol Language Server</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td></td>
 			</tr>
 		</table>
 
+		<h5>Notes:</h5>
+		<dl>
+			<dt id="dependencyFootnote">
+				Automatic dependency management
+			</dt>
+			<dd>
+				Langugage servers that support this feature are able to resolve / install a project's
+				3rd-party depdencies without the need for a user to manually intervene.
+			</dd>
+			<dt id="arbitraryExecutionFootnote">
+				No arbitrary code execution
+			</dt>
+			<dd>
+				Language servers that support this feature <em>don't</em> execute arbitrary code (some language servers do
+				this when running build scripts, analyzing the project, etc.).
+			</dd>
+			<dt id="filesExtensionFootnote">
+				Files extension
+			</dt>
+			<dd>
+				Language servers that support this feature are able to operate without sharing a physical
+				filesystem with the client.
+				<a href="https://github.com/sourcegraph/language-server-protocol/blob/master/extension-files.md">See this link for more information.</a>
+			</dd>
+			<dt id="symbolDescriptorFootnote">
+					SymbolDescriptor extension
+			</dt>
+			<dd>
+				Language servers that support this feature are able to identify symbols through <code>SymbolDescriptor</code>s.
+				<a href="https://github.com/sourcegraph/language-server-protocol/blob/master/extension-symbol-descriptor.md">See this link for more information.</a>
+			</dd>
+		</dl>
+
 		<br/>
-		<p>
-			<sup>1</sup> The <a href="https://github.com/sourcegraph/language-server-protocol/pull/3">Virtual File System (VFS) extension</a>			allows a language server to operate without sharing a physical file system with the client. This provides deployment benefits
-			and security enhancements in multi-tenant environments.<br/>
-			<sup>2</sup> A language server can be run without running local executables or interacting with the local file system.<br/>
-			<sup>3</sup> A single language server can service multiple simultaneous workspace sessions independently.
-		</p>
 
 		<br/>
 		<a name="implementations-client"></a>
@@ -561,6 +1009,28 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
+				<th>IntelliJ / JetBrains IDEs</th>
+				<td><a href="https://github.com/gtache">Guillaume Tâche</a></td>
+				<td class="repo"><a href="https://github.com/gtache/intellij-lsp">github.com/gtache/intellij-lsp</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>vim</th>
+				<td><a href="https://github.com/natebosch">Nate Bosch</a></td>
+				<td class="repo"><a href="https://github.com/natebosch/vim-lsc">github.com/natebosch/vim-lsc</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
 				<th>VSCode</th>
 				<td><a href="https://www.microsoft.com/">Microsoft</a></td>
 				<td class="repo"><a href="https://github.com/Microsoft/VSCode">github.com/Microsoft/VSCode</a></td>
@@ -572,7 +1042,7 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
-				<th>neovim</th>
+				<th>vim/neovim</th>
 				<td><a href="https://github.com/autozimu">Junfeng Li</a></td>
 				<td class="repo"><a href="https://github.com/autozimu/LanguageClient-neovim">github.com/autozimu/LanguageClient-neovim</a></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
@@ -583,7 +1053,40 @@
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
-				<th colspan="9"><br/>Works in progress</th>
+				<th>Sublime Text 3</th>
+				<td><a href="https://github.com/tomv564">Tom van Ommeren</a></td>
+				<td class="repo"><a href="https://github.com/tomv564/LSP">github.com/tomv564/LSP</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th><a href="https://github.com/Microsoft/monaco-editor">MS Monaco Editor</a></th>
+				<td><a href="http://typefox.io">TypeFox</a></td>
+				<td class="repo"><a href="https://github.com/TypeFox/monaco-languageclient">github.com/TypeFox/monaco-languageclient</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th colspan="9"><br/>Work in progress</th>
+			</tr>
+			<tr>
+				<th>Atom</th>
+				<td><a href="https://github.com/github">GitHub</a></td>
+				<td class="repo"><a href="https://github.com/atom/atom-languageclient">github.com/atom/atom-languageclient</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 			<tr>
 				<th>Emacs</th>
@@ -597,6 +1100,17 @@
 				<td class="warning"></td>
 			</tr>
 			<tr>
+				<th>Emacs</th>
+				<td><a href="https://github.com/vibhavp">Vibhav Pant</a></td>
+				<td class="repo"><a href="https://github.com/emacs-lsp/lsp-mode">github.com/emacs-lsp/lsp-mode</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
 				<th>Sublime</th>
 				<td><a href="https://sourcegraph.com/">Sourcegraph</a></td>
 				<td class="repo"><a href="https://github.com/sourcegraph/sublime-lsp">github.com/sourcegraph/sublime-lsp</a></td>
@@ -608,7 +1122,18 @@
 				<td class="warning"></td>
 			</tr>
 			<tr>
-				<th>Vim</th>
+				<th>Theia</th>
+				<td><a href="https://github.com/theia-ide">Theia IDE</a></td>
+				<td class="repo"><a href="https://github.com/theia-ide/theia">github.com/theia-ide/theia</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="warning"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>neovim</th>
 				<td><a href="https://github.com/tjdevries">TJ DeVries</a></td>
 				<td class="repo"><a href="https://github.com/tjdevries/nvim-langserver-shim">github.com/tjdevries/nvim-langserver-shim</a></td>
 				<td class="warning"></td>
@@ -617,6 +1142,39 @@
 				<td class="warning"></td>
 				<td class="warning"></td>
 				<td class="warning"></td>
+			</tr>
+			<tr>
+				<th>neovim/vim</th>
+				<td><a href="https://github.com/w0rp">w0rp</a></td>
+				<td class="repo"><a href="https://github.com/w0rp/ale">github.com/w0rp/ale</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="danger"></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+			</tr>
+			<tr>
+				<th>Spyder IDE</th>
+				<td><a href="https://github.com/spyder-ide">Spyder IDE Dev Team</a></td>
+				<td class="repo"><a href="https://github.com/spyder-ide/spyder">github.com/spyder-ide/spyder</a></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+				<td class="warning"></td>
+			</tr>
+			<tr>
+				<th>Oni</th>
+				<td><a href="http://onivim.io/">Oni</a></td>
+				<td class="repo"><a href="https://github.com/onivim/oni">github.com/onivim/oni</a></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 			</tr>
 		</table>
 
