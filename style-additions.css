@@ -1,4 +1,21 @@
 td.repo {
-  word-wrap:break-word;
-  word-break:break-all;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.sticky>tr>td::after,
+.sticky>tr>th::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
 }
