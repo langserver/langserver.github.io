@@ -3,19 +3,25 @@ td.repo {
   word-break: break-all;
 }
 
-.sticky {
+.sticky-header>thead>tr>* {
   position: sticky;
-  top: 0;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 0px;
   background-color: #fff;
   z-index: 1;
+  border: none;
 }
-
-.sticky>tr>td::after,
-.sticky>tr>th::after {
+.sticky-header>tbody>tr:first-child>* {
+  border: none;
+}
+.sticky-header>thead>tr>*::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
 }
