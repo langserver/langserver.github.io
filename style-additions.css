@@ -1,4 +1,27 @@
 td.repo {
-  word-wrap:break-word;
-  word-break:break-all;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.sticky-header>thead>tr>* {
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 0px;
+  background-color: #fff;
+  z-index: 1;
+  border: none;
+}
+.sticky-header>tbody>tr:first-child>* {
+  border: none;
+}
+.sticky-header>thead>tr>*::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 2px solid #ddd;
 }
