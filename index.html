@@ -646,8 +646,6 @@
 				<td>
 					<ul class="list-unstyled text-nowrap">
 						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
-						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
-						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
 					</ul>
 				</td>
 			</tr>
@@ -796,8 +794,6 @@
 				<td>
 					<ul class="list-unstyled text-nowrap">
 						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
-						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
-						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
 					</ul>
 				</td>
 			</tr>
@@ -946,8 +942,6 @@
 				<td>
 					<ul class="list-unstyled text-nowrap">
 						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
-						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
-						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
 					</ul>
 				</td>
 			</tr>
@@ -1079,8 +1073,6 @@
 					<ul class="list-unstyled text-nowrap">
 						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
 						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
-						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
-						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
 					</ul>
 				</td>
 			</tr>
@@ -1282,8 +1274,6 @@
 					<ul class="list-unstyled text-nowrap">
 						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
 						<li>No arbitrary code execution<sup><a href="#arbitraryExecutionFootnote">2</a></sup></li>
-						<li>Files extension<sup><a href="#filesExtensionFootnote">3</a></sup></li>
-						<li>SymbolDescriptor extension<sup><a href="#symbolDescriptorFootnote">4</a></sup></li>
 					</ul>
 				</td>
 			</tr>
@@ -1431,21 +1421,6 @@
 			<dd>
 				Language servers that support this feature <em>don't</em> execute arbitrary code (some language servers do
 				this when running build scripts, analyzing the project, etc.).
-			</dd>
-			<dt id="filesExtensionFootnote">
-				Files extension
-			</dt>
-			<dd>
-				Language servers that support this feature are able to operate without sharing a physical
-				filesystem with the client.
-				<a href="https://github.com/sourcegraph/language-server-protocol/blob/master/extension-files.md">See this link for more information.</a>
-			</dd>
-			<dt id="symbolDescriptorFootnote">
-					SymbolDescriptor extension
-			</dt>
-			<dd>
-				Language servers that support this feature are able to identify symbols through <code>SymbolDescriptor</code>s.
-				<a href="https://github.com/sourcegraph/language-server-protocol/blob/master/extension-symbol-descriptor.md">See this link for more information.</a>
 			</dd>
 		</dl>
 
