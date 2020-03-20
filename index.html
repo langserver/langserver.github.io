@@ -1168,13 +1168,19 @@
 				<th>Scala</th>
 				<td><a href="https://github.com/scalameta">Scalameta</a></td>
 				<td class="repo"><a href="https://github.com/scalameta/metals">github.com/scalameta/metals</a></td>
-				<td class="warning"></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
 				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-				<td></td>
+				<td class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+				<td>
+					<ul class="list-unstyled text-nowrap">
+						<li>Automatic dependency management<sup><a href="#dependencyFootnote">1</a></sup></li>
+            <li>Tree View Protocol<sup><a href="#treeViewFootnote">5</a></sup></li>
+            <li>Decoration Protocol<sup><a href="#decorationFootnote">6</a></sup></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
 				<th>SPARQL</th>
@@ -1421,6 +1427,20 @@
 			<dd>
 				Language servers that support this feature <em>don't</em> execute arbitrary code (some language servers do
 				this when running build scripts, analyzing the project, etc.).
+			</dd>
+			<dt id="treeViewFootnote">
+			  Tree View Protocol
+			</dt>
+			<dd>
+				Language servers that support this feature are able to render tree views.
+        <a href="https://scalameta.org/metals/docs/editors/tree-view-protocol.html">See this link for more information.</a>
+			</dd>
+			<dt id="decorationFootnote">
+			   Decoration Protocol
+			</dt>
+			<dd>
+				Language servers that support this feature are able to provide text to be displayed as "non-editable" text in the text editor.
+        <a href="https://scalameta.org/metals/docs/editors/decoration-protocol.html">See this link for more information.</a>
 			</dd>
 		</dl>
 
