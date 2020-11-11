@@ -44,9 +44,6 @@ td.repo {
         background-color: #000 !important;
         border-color: #555 !important;
     }
-    th {
-       background-color: #000 !important;
-    }
     th:after {
         border-bottom-color: #333 !important;
     }
