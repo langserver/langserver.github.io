@@ -1,3 +1,8 @@
+.page-header {
+    background-color:#eee;
+    margin-top: 0px;
+}
+
 td.repo {
   word-wrap: break-word;
   word-break: break-all;
@@ -26,9 +31,13 @@ td.repo {
   border-bottom: 2px solid #ddd;
 }
 
+.text-center {
+    font-size:24px;
+}
+
 @media (prefers-color-scheme: dark) {
     .page-header {
-        background: #333 !important;
+        background: #333;
 
         border-bottom-color: #000;
     }
