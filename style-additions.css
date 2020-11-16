@@ -31,8 +31,8 @@ td.repo {
   border-bottom: 2px solid #ddd;
 }
 
-.text-center {
-    font-size:24px;
+.col-md-1 {
+    font-size: 24px;
 }
 
 @media (prefers-color-scheme: dark) {
