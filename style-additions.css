@@ -1,3 +1,8 @@
+.page-header {
+    background-color:#eee;
+    margin-top: 0;
+}
+
 td.repo {
   word-wrap: break-word;
   word-break: break-all;
@@ -24,4 +29,56 @@ td.repo {
   bottom: 0;
   width: 100%;
   border-bottom: 2px solid #ddd;
+}
+
+.col-md-1 {
+    font-size: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .page-header {
+        background: #333;
+
+        border-bottom-color: #000;
+    }
+    body,
+    .panel-heading {
+        color: #bbb !important;
+        background: #000 !important;
+        border-color: #555 !important;
+    }
+    .panel-default,
+    th,
+    td {
+        background-color: #000 !important;
+        border-color: #555 !important;
+    }
+    th:after {
+        border-bottom-color: #333 !important;
+    }
+    th,
+    td {
+        border-top-color: #333 !important;
+    }
+    h1 {
+        color: #eee;
+    }
+
+    blockquote {
+        border-left-color: #555;
+    }
+
+    .success {
+        background-color: #040 !important;
+    }
+    .warning {
+        background-color: #440 !important;
+    }
+    .danger {
+        background-color: #630 !important;
+    }
+    .info {
+        background-color: #034 !important;
+    }
+
 }
